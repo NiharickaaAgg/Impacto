@@ -1,0 +1,316 @@
+/* General Form Styles */
+.blog-form-container {
+  background: url('/path-to-your-uploaded-image') no-repeat center center;
+  background-size: cover;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  /* 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 3px 6px #fca5a5;
+  transition: background-color 0.3s ease;
+}
+
+/* Input, Textarea, and Select Styling */
+form input, form select, form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+/* Add pink border on hover for input fields */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+textarea:hover {
+  border: 2px solid #ff69b4 !important; /* pink border color with !important */
+}
+
+/* Focus style for a consistent look on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border: 2px solid #ff69b4 !important; /* pink border with !important */
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.3); /* subtle pink shadow */
+  outline: none;
+}
+
+/* Theme-specific Adjustments */
+body.dark-mode .blog-form-container {
+  background-color: rgba(34, 33, 33, 0.6);
+  color: #fff;
+}
+
+body.light-mode .blog-form-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #333;
+}
+
+/* Button Styling */
+form button[type="submit"] {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #e65c00;
+  transform: scale(1.03);
+}
+
+/* Placeholder for blog content */
+textarea#blogContent::placeholder {
+  content: "Write a sample blog to give an idea of size";
+}
+
+/* Popup styling for success */
+#popupMessage {
+  display: block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Collaborator Section Styling */
+.collaborator-section {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-bottom: 60px; /* Increased bottom margin */
+}
+
+/* Collaborator List Styling */
+.collaborator-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Adds spacing between collaborators */
+  margin-bottom: 20px;
+}
+
+.collaborator-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Full width by default */
+}
+
+/* Responsive Collaborator Item for Larger Screens */
+@media (min-width: 768px) {
+  .collaborator-item {
+      width: calc(50% - 15px); /* Two items per row with gap */
+  }
+}
+
+/* Add Collaborator Button */
+.add-collaborator-btn {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%; /* Full width on mobile screens */
+}
+
+/* Hover effect for the button */
+.add-collaborator-btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.03);
+}
+
+.get-suggestions, .add-collaborator{
+  padding: 7px;
+}
+
+/* Adjust button for larger screens */
+@media (min-width: 768px) {
+  .add-collaborator-btn {
+      width: auto; /* Allows button to shrink on larger screens */
+      margin-top: 0; /* Remove margin on larger screens */
+  }
+}
+
+/* Footer Styles */
+#custom-footer {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  color: #333;
+}
+
+.footer-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-col {
+  flex: 1;
+  padding: 10px;
+  min-width: 250px;
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #3B3B58;
+}
+
+[data-theme="dark"] .footer-title {
+  color: #D3D3D3; /* Light grey color for dark mode */
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.footer-content {
+  font-size: 0.9rem;
+}
+
+.footer-description {
+  margin: 10px 0;
+}
+
+.footer-address, .footer-phone, .footer-email {
+  margin: 5px 0;
+}
+
+.footer-icon {
+  color: #007bff;
+  margin-right: 5px;
+}
+
+.footer-email-link {
+  color: #3B3B58;
+  text-decoration: none;
+}
+
+.footer-email-link:hover {
+  text-decoration: underline;
+}
+
+.feature-post {
+  margin-top: 15px;
+}
+
+.post-item {
+  margin-bottom: 10px;
+}
+
+.post-flex {
+  display: flex;
+  align-items: center;
+}
+
+.post-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.post-title {
+  font-size: 1rem;
+  color: #333;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+
+.footer-tags, .footer-social {
+  margin-top: 10px;
+}
+
+.tags-wrapper, .social-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-tag, .footer-social-link {
+  background-color: #e9ecef;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-tag:hover, .footer-social-link:hover {
+  background-color: #d5d9db;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .custom-footer .col-3 {
+      flex: 0 0 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-footer .col-3 {
+      flex: 0 0 100%;
+  }
+}
+
